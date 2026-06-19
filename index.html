@@ -472,7 +472,7 @@ footer p { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
       <img src="sumo.png" alt="Sumo de Limón" style="width:100%;height:200px;object-fit:contain;border-radius:10px;margin-bottom:0.6rem">
       <h3 style="font-size:1rem;margin-bottom:0.15rem">Sumo de Limón</h3>
       <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.2rem">4 Lts</p>
-      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$ —</p>
+      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$28.500</p>
       <div class="stepper" data-product="Sumo de Limón">
         <button class="stepper-btn minus" onclick="changeQty('Sumo de Limón', -1)">−</button>
         <span class="stepper-count" id="qty-Sumo de Limón">0</span>
@@ -482,7 +482,7 @@ footer p { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
     <div class="category-card" data-id="aritos">
       <img src="aritos.png" alt="Aritos de Limón" style="width:100%;height:200px;object-fit:contain;border-radius:10px;margin-bottom:0.6rem">
       <h3 style="font-size:1rem;margin-bottom:0.3rem">Aritos de Limón</h3>
-      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$ —</p>
+      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$14.000</p>
       <div class="stepper" data-product="Aritos de Limón">
         <button class="stepper-btn minus" onclick="changeQty('Aritos de Limón', -1)">−</button>
         <span class="stepper-count" id="qty-Aritos de Limón">0</span>
@@ -492,7 +492,7 @@ footer p { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
     <div class="category-card" data-id="crispetas">
       <img src="crispetas.png" alt="Crispetas" style="width:100%;height:200px;object-fit:contain;border-radius:10px;margin-bottom:0.6rem">
       <h3 style="font-size:1rem;margin-bottom:0.3rem">Crispetas</h3>
-      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$ —</p>
+      <p style="font-size:1.1rem;font-weight:800;color:#ffe600;margin-bottom:0.4rem">$12.500</p>
       <div class="stepper" data-product="Crispetas">
         <button class="stepper-btn minus" onclick="changeQty('Crispetas', -1)">−</button>
         <span class="stepper-count" id="qty-Crispetas">0</span>
@@ -682,11 +682,24 @@ function checkout() {
   const names = Object.keys(cart);
   if (names.length === 0) return;
   
+  const prices = {
+    'Sumo de Limón': 28500,
+    'Aritos de Limón': 14000,
+    'Crispetas': 12500
+  };
+  
+  let totalItems = 0;
+  let totalMoney = 0;
   let msg = '🛒 *Nuevo pedido*%0A%0A';
   names.forEach(name => {
-    msg += `• ${name}: ${cart[name]} unidad${cart[name] > 1 ? 'es' : ''}%0A`;
+    const qty = cart[name];
+    const price = prices[name] || 0;
+    const subtotal = qty * price;
+    totalItems += qty;
+    totalMoney += subtotal;
+    msg += `• ${name}: ${qty} uni × $${price.toLocaleString('es-CO')} = *$${subtotal.toLocaleString('es-CO')}*%0A`;
   });
-  msg += `%0A📍 *Total: ${Object.values(cart).reduce((a,b) => a+b, 0)} productos*`;
+  msg += `%0A📍 *Total: ${totalItems} productos — $${totalMoney.toLocaleString('es-CO')}*`;
   
   const url = `https://wa.me/573004515809?text=${msg}`;
   window.open(url, '_blank');
