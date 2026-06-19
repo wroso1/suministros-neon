@@ -1,357 +1,557 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>⚡ Suministros Neon · Proveedor de bares y discotecas en Medellín</title>
-  <meta name="description" content="Suministros Neon: sumo de limón, crispetas, aritos y más para bares y discotecas. Envíos a Medellín y toda Colombia. Cotiza por WhatsApp.">
-  <meta name="keywords" content="suministros neon, sumo de limón, crispetas, aritos, bares, discotecas, Medellín, proveedor">
-  <meta property="og:title" content="Suministros Neon · Proveedor de bares y discotecas">
-  <meta property="og:description" content="Sumo de limón, crispetas, aritos y más. Envíos a Medellín y toda Colombia. Cotiza por WhatsApp.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wroso1.github.io/suministros-neon/">
-  <meta property="og:image" content="https://wroso1.github.io/suministros-neon/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Suministros Neon · Proveedor de bares y discotecas">
-  <meta name="twitter:description" content="Sumo de limón, crispetas, aritos y más. Envíos a Medellín y toda Colombia.">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Suministros Neon",
-      "url": "https://wroso1.github.io/suministros-neon/",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+57-300-451-5809",
-        "contactType": "customer service",
-        "areaServed": "CO",
-        "availableLanguage": "Spanish"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Medellín",
-        "addressCountry": "CO"
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #1e1e2f;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, .logo, .nav-link, .cta-btn { font-family: 'Poppins', sans-serif; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suministros — Todo para tu negocio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
-    /* TOP BAR */
-    .top-bar {
-      background: #0a0a1a;
-      color: #f0f4ff;
-      text-align: center;
-      padding: 0.6rem 1rem;
-      font-size: 0.95rem;
-    }
-    .top-bar a { color: #00f0ff; text-decoration: none; font-weight: 500; }
-    .top-bar a:hover { text-decoration: underline; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* HEADER */
-    .header {
-      background: #ffffff;
-      border-bottom: 1px solid #eaeaea;
-      padding: 0.8rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-    }
-    .header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-    .logo { font-size: 1.8rem; font-weight: 700; color: #0a0a1a; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
-    .logo span {
-      background: linear-gradient(135deg, #0a0a1a, #2a2a4a);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .nav { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
-    .nav a { text-decoration: none; color: #1e1e2f; font-weight: 500; font-size: 1rem; transition: color 0.2s; position: relative; }
-    .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: #0a0a1a; transition: 0.3s; }
-    .nav a:hover::after { width: 100%; }
-    .nav a:hover { color: #0a0a1a; }
-    .nav .cta-nav {
-      background: #0a0a1a; color: #ffffff !important; padding: 0.5rem 1.5rem;
-      border-radius: 40px; font-weight: 600; transition: 0.2s;
-    }
-    .nav .cta-nav:hover { background: #2a2a4a; transform: scale(1.02); }
-    .nav .cta-nav::after { display: none; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #08090d;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    /* HERO */
-    .hero { padding: 5rem 0 4rem; background: #f9fafc; position: relative; }
-    .hero .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-    .hero-text { flex: 1 1 400px; }
-    .hero-text h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.1; color: #0a0a1a; margin-bottom: 1rem; }
-    .hero-text h1 span {
-      background: linear-gradient(135deg, #0a0a1a, #3a3a6a);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .hero-text p { font-size: 1.2rem; color: #4a4a5a; margin-bottom: 2rem; max-width: 500px; }
-    .hero-cta {
-      display: inline-block; background: #0a0a1a; color: #ffffff;
-      padding: 1rem 2.8rem; border-radius: 60px; text-decoration: none;
-      font-weight: 600; font-size: 1.2rem; transition: 0.2s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .hero-cta:hover { background: #2a2a4a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-    .hero-image { flex: 1 1 300px; text-align: center; font-size: 8rem; line-height: 1; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.05)); }
+/* ===== FONDO CON SCROLL INFINITO (parallax) ===== */
+.infinite-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 300%;
+  z-index: 0;
+  background: url('fondo.jpg') repeat-y center top;
+  background-size: cover;
+  will-change: transform;
+  opacity: 0.6;
+}
 
-    /* CREDIT SLIDER */
-    .credit-slider { background: #f2f4f8; padding: 1.2rem 0; overflow: hidden; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
-    .credit-track { display: flex; gap: 3rem; animation: scrollCredit 20s linear infinite; width: max-content; }
-    .credit-item { display: flex; align-items: center; gap: 0.8rem; font-size: 1rem; font-weight: 500; color: #1e1e2f; white-space: nowrap; }
-    .credit-item span { background: #0a0a1a; color: #fff; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; }
-    @keyframes scrollCredit { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.infinite-bg::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  background: radial-gradient(ellipse at center, rgba(8,9,13,0.15) 0%, rgba(8,9,13,0.88) 100%);
+  pointer-events: none;
+}
 
-    /* PRODUCTS */
-    .products { padding: 5rem 0; }
-    .section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; text-align: center; margin-bottom: 0.5rem; color: #0a0a1a; }
-    .section-sub { text-align: center; color: #5a5a6a; margin-bottom: 3rem; font-size: 1.1rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .product-card {
-      background: #ffffff; border: 1px solid #eaeaea; border-radius: 2rem;
-      padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
-    }
-    .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); border-color: #c0c0d0; }
-    .product-emoji { font-size: 4.5rem; line-height: 1.2; margin-bottom: 0.5rem; }
-    .product-card h3 { font-size: 1.8rem; font-weight: 700; color: #0a0a1a; margin-bottom: 0.3rem; }
-    .product-desc { color: #5a5a6a; margin-bottom: 1rem; font-size: 0.95rem; }
-    .product-variants { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; background: #f7f8fc; padding: 1rem; border-radius: 1rem; }
-    .variant { display: flex; justify-content: space-between; font-size: 0.95rem; color: #1e1e2f; }
-    .variant .price { font-weight: 700; color: #0a0a1a; }
-    .btn-whatsapp {
-      display: inline-block; background: #25D366; color: #ffffff;
-      padding: 0.8rem 2rem; border-radius: 60px; text-decoration: none;
-      font-weight: 600; font-size: 1rem; transition: 0.2s; border: none; cursor: pointer;
-    }
-    .btn-whatsapp:hover { background: #1da851; transform: scale(1.02); }
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
 
-    /* ABOUT */
-    .about { padding: 5rem 0; background: #f9fafc; }
-    .about-grid { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
-    .about-text { flex: 1 1 400px; }
-    .about-text h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; color: #0a0a1a; }
-    .about-text p { color: #4a4a5a; margin-bottom: 1rem; font-size: 1.05rem; }
-    .about-image { flex: 1 1 300px; text-align: center; font-size: 6rem; }
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
 
-    /* FOOTER */
-    .footer { background: #0a0a1a; color: #f0f4ff; padding: 3rem 0 1.5rem; }
-    .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
-    .footer-col { flex: 1 1 200px; }
-    .footer-col h4 { font-size: 1.2rem; margin-bottom: 1rem; color: #ffffff; }
-    .footer-col a { display: block; color: #b0b0c0; text-decoration: none; margin-bottom: 0.5rem; transition: 0.2s; }
-    .footer-col a:hover { color: #00f0ff; }
-    .footer-social { display: flex; gap: 1rem; margin-top: 0.5rem; }
-    .footer-social a { font-size: 1.8rem; color: #b0b0c0; transition: 0.2s; }
-    .footer-social a:hover { color: #00f0ff; }
-    .footer-bottom { border-top: 1px solid #2a2a4a; padding-top: 1.5rem; text-align: center; color: #7a7a8a; font-size: 0.9rem; }
+.hero h1 .line1 {
+  display: block;
+  background: linear-gradient(135deg, #39ff14 0%, #b026ff 50%, #ffe600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 999;
-      background: #25D366; width: 60px; height: 60px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4); transition: 0.2s; text-decoration: none;
-    }
-    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5); }
-    .whatsapp-float svg { width: 32px; height: 32px; fill: #ffffff; }
+.hero h1 .line2 {
+  display: block;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
 
-    /* ANIMATIONS */
-    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .header .container { flex-direction: column; gap: 0.8rem; }
-      .nav { gap: 1rem; justify-content: center; }
-      .hero .container { flex-direction: column; text-align: center; }
-      .hero-text p { margin-left: auto; margin-right: auto; }
-      .hero-image { font-size: 5rem; }
-      .product-grid { grid-template-columns: 1fr; }
-      .about-grid { flex-direction: column; text-align: center; }
-      .footer-grid { flex-direction: column; text-align: center; }
-      .footer-social { justify-content: center; }
-    }
-  </style>
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #39ff14, #b026ff);
+  color: #08090d;
+  box-shadow: 0 0 30px rgba(57,255,20,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 50px rgba(57,255,20,0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  border-color: #39ff14;
+  color: #39ff14;
+  transform: translateY(-3px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: float 2s ease-in-out infinite;
+}
+
+.scroll-indicator .mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator .mouse::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  background: #39ff14;
+  border-radius: 3px;
+  animation: scrollDot 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 .highlight {
+  background: linear-gradient(135deg, #39ff14, #b026ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== CATEGORIAS ===== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #39ff14, #b026ff, #ffe600);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.category-card:hover::before { opacity: 1; }
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(57,255,20,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.category-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+.category-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; }
+.category-card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; }
+
+/* ===== PRODUCTOS ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  border-color: rgba(176,38,255,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.product-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, #39ff14, #b026ff);
+  color: #08090d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+.product-card .price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffe600, #39ff14);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.btn-small { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
+
+/* ===== CTA ===== */
+.cta-section {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.cta-glare {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(57,255,20,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer p { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
+
+/* ===== PARTICLES ===== */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+  .section { padding: 4rem 1.5rem; }
+  .btn-group { flex-direction: column; align-items: center; }
+}
+</style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    🚚 Envíos a Medellín y toda Colombia · 📱 <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20productos" target="_blank">WhatsApp +57 300 451 5809</a>
-  </div>
+<div class="infinite-bg"></div>
+<canvas id="particles-canvas"></canvas>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <a href="#" class="logo">⚡ <span>Suministros Neon</span></a>
-      <nav class="nav">
-        <a href="#hero">Inicio</a>
-        <a href="#products">Productos</a>
-        <a href="#about">Nosotros</a>
-        <a href="#contact" class="cta-nav">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-text fade-up">
-        <h1>Todo para tu <span>bar o discoteca</span></h1>
-        <p>Suministros de confianza en Medellín. Sumo de limón, crispetas, aritos y más. Calidad y precio justo.</p>
-        <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20productos" target="_blank" class="hero-cta">Cotiza por WhatsApp →</a>
-      </div>
-      <div class="hero-image fade-up">
-        🍋🍿⭕
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDIT SLIDER -->
-  <div class="credit-slider">
-    <div class="credit-track">
-      <div class="credit-item">💳 <span>Crédito</span> Paga a 30 días · Aprobación inmediata</div>
-      <div class="credit-item">📦 <span>Envío gratis</span> Compras mayores a $150.000</div>
-      <div class="credit-item">🏆 <span>+500</span> Clientes satisfechos en Medellín</div>
-      <div class="credit-item">⚡ <span>Despacho</span> 24/7 para bares y discotecas</div>
-      <div class="credit-item">💳 <span>Crédito</span> Paga a 30 días · Aprobación inmediata</div>
-      <div class="credit-item">📦 <span>Envío gratis</span> Compras mayores a $150.000</div>
-      <div class="credit-item">🏆 <span>+500</span> Clientes satisfechos en Medellín</div>
-      <div class="credit-item">⚡ <span>Despacho</span> 24/7 para bares y discotecas</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      <span class="line1">Suministros</span>
+      <span class="line2">Para tu negocio</span>
+    </h1>
+    <p>Todo lo que necesitas para mantener tu empresa funcionando al máximo. Calidad, precio y confianza en un solo lugar.</p>
+    <div class="btn-group">
+      <a href="#categorias" class="btn btn-primary">Explorar →</a>
+      <a href="#contacto" class="btn btn-outline">Contáctanos</a>
     </div>
   </div>
+  <div class="scroll-indicator">
+    <div class="mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
-    <div class="container">
-      <h2 class="section-title fade-up">Nuestros productos</h2>
-      <p class="section-sub fade-up">Precios en pesos colombianos · Cotiza por WhatsApp</p>
-      <div class="product-grid">
-
-        <div class="product-card fade-up">
-          <div class="product-emoji">🍋</div>
-          <h3>Sumo de Limón</h3>
-          <p class="product-desc">Natural, listo para usar. Ideal para coctelería y micheladas.</p>
-          <div class="product-variants">
-            <div class="variant"><span>Galón x 4L</span><span class="price">$42.000</span></div>
-            <div class="variant"><span>Unidad x 1L</span><span class="price">$14.000</span></div>
-          </div>
-          <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20Sumo%20de%20Lim%C3%B3n" target="_blank" class="btn-whatsapp">Cotizar por WhatsApp</a>
-        </div>
-
-        <div class="product-card fade-up">
-          <div class="product-emoji">🍿</div>
-          <h3>Crispetas</h3>
-          <p class="product-desc">Crujientes, saladas. Perfectas para acompañar tus bebidas.</p>
-          <div class="product-variants">
-            <div class="variant"><span>Bolsa x 500g</span><span class="price">$8.500</span></div>
-            <div class="variant"><span>Caja x 10un</span><span class="price">$72.000</span></div>
-          </div>
-          <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20Crispetas" target="_blank" class="btn-whatsapp">Cotizar por WhatsApp</a>
-        </div>
-
-        <div class="product-card fade-up">
-          <div class="product-emoji">⭕</div>
-          <h3>Aritos</h3>
-          <p class="product-desc">Snack clásico de pasabocas, ideal para compartir.</p>
-          <div class="product-variants">
-            <div class="variant"><span>Bolsa x 500g</span><span class="price">$6.500</span></div>
-            <div class="variant"><span>Caja x 10un</span><span class="price">$55.000</span></div>
-          </div>
-          <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20Aritos" target="_blank" class="btn-whatsapp">Cotizar por WhatsApp</a>
-        </div>
-
-      </div>
+<!-- CATEGORIAS -->
+<section class="section" id="categorias">
+  <div class="section-header">
+    <h2>Nuestras <span class="highlight">Categorías</span></h2>
+    <p>Encuentra exactamente lo que necesitas en nuestras líneas especializadas</p>
+  </div>
+  <div class="categories-grid">
+    <div class="category-card">
+      <div class="category-icon">⚡</div>
+      <h3>Material Eléctrico</h3>
+      <p>Cables, interruptores, tableros y todo en instalaciones eléctricas</p>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text fade-up">
-          <h2>Nosotros</h2>
-          <p>En <strong>Suministros Neon</strong> somos proveedores de bares, discotecas y restaurantes en Medellín. Ofrecemos productos de alta calidad con precios competitivos y entregas rápidas.</p>
-          <p>Más de 500 clientes confían en nosotros. Trabajamos con responsabilidad y pasión por el servicio. <strong>¡Cotiza hoy y únete a la familia Neon!</strong></p>
-          <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="btn-whatsapp">Escríbenos</a>
-        </div>
-        <div class="about-image fade-up">⚡🤝</div>
-      </div>
+    <div class="category-card">
+      <div class="category-icon">🔧</div>
+      <h3>Ferretería</h3>
+      <p>Herramientas manuales, fijaciones, adhesivos y accesorios</p>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>⚡ Suministros Neon</h4>
-          <p style="color:#b0b0c0;">Proveedor de bares y discotecas en Medellín. Calidad y confianza.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Enlaces</h4>
-          <a href="#hero">Inicio</a>
-          <a href="#products">Productos</a>
-          <a href="#about">Nosotros</a>
-          <a href="https://wa.me/573004515809" target="_blank">Contacto</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <a href="https://wa.me/573004515809" target="_blank">📱 +57 300 451 5809</a>
-          <a href="#">Medellín, Colombia 🇨🇴</a>
-        </div>
-        <div class="footer-col">
-          <h4>Síguenos</h4>
-          <div class="footer-social">
-            <a href="#" target="_blank" aria-label="Facebook">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="#" target="_blank" aria-label="Instagram">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="#" target="_blank" aria-label="TikTok">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        © 2025 Suministros Neon · Todos los derechos reservados · Medellín, Colombia
-      </div>
+    <div class="category-card">
+      <div class="category-icon">🚿</div>
+      <h3>Tubería & Grifería</h3>
+      <p>Tuberías, válvulas, conexiones y sistemas hidráulicos</p>
     </div>
-  </footer>
+    <div class="category-card">
+      <div class="category-icon">🏗️</div>
+      <h3>Construcción</h3>
+      <p>Materiales de obra, acabados y equipos de protección</p>
+    </div>
+  </div>
+</section>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/573004515809?text=Hola%2C%20quiero%20cotizar%20productos" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+<!-- PRODUCTOS -->
+<section class="section">
+  <div class="section-header">
+    <h2>Más <span class="highlight">Vendidos</span></h2>
+    <p>Los productos favoritos de nuestros clientes</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <span class="product-badge">Oferta</span>
+      <h3>Kit Eléctrico Profesional</h3>
+      <div class="price">$149.900</div>
+      <p>Incluye cable THW #12, breaker 20A, tomacorrientes y placas</p>
+      <a href="#" class="btn btn-primary btn-small">Lo quiero</a>
+    </div>
+    <div class="product-card">
+      <span class="product-badge">Más vendido</span>
+      <h3>Taladro Percutor 650W</h3>
+      <div class="price">$279.900</div>
+      <p>Mandril ½", velocidad variable, incluye maletín + 10 brocas</p>
+      <a href="#" class="btn btn-primary btn-small">Lo quiero</a>
+    </div>
+    <div class="product-card">
+      <span class="product-badge">Nuevo</span>
+      <h3>Tubería PVC 2" x 6m</h3>
+      <div class="price">$45.900</div>
+      <p>Alta presión, unión cementada, ideal para redes hidrosanitarias</p>
+      <a href="#" class="btn btn-primary btn-small">Lo quiero</a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    (function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.2 });
-      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    })();
-  </script>
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <div class="cta-glare"></div>
+  <div class="cta-content">
+    <h2>¿Listo para <span class="highlight">abastecerte</span>?</h2>
+    <p>Hacemos envíos a toda la ciudad. Cotiza hoy y recibe tus materiales en 24h.</p>
+    <a href="https://wa.me/573004515809" class="btn btn-primary">Pedir por WhatsApp →</a>
+  </div>
+</section>
 
+<footer>
+  <p>© 2026 <strong>Suministros</strong> — Todo para tu negocio</p>
+</footer>
+
+<script>
+// === INFINITE SCROLL BACKGROUND ===
+const bg = document.querySelector('.infinite-bg');
+let scrollY = 0;
+
+window.addEventListener('scroll', () => {
+  scrollY = window.scrollY;
+  bg.style.transform = `translateY(${-scrollY * 0.5}px)`;
+});
+
+// === PARTICLES ===
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
+    this.opacity = Math.random() * 0.5 + 0.1;
+    this.color = ['#39ff14', '#b026ff', '#ffe600'][Math.floor(Math.random() * 3)];
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.opacity;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 150) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(57,255,20,${0.05 * (1 - dist / 150)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
